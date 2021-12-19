@@ -1,7 +1,7 @@
-class Hangman_pic:
+class Num_pic:
     def __init__(self):
         self.curent_frame = 0
-        self.pictures = [range(0, 10)]
+        self.pictures = [str(i) for i in range(0, 10)]
 
     def get_frame(self, n):
         return self.pictures[n]
