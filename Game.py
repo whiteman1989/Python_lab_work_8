@@ -57,12 +57,14 @@ class Game:
         if guess in self.secret_word:
             self.correct_letters+=guess
             if len(set(self.secret_word)) == len(set(self.secret_word).intersection(set(self.correct_letters))):
+                self.display_board()
                 print("Так секретне слово -", self.secret_word, "Ви виграли")
                 return True
         else:
             self.missed_letters+=guess
             self.hangman.to_next_frame()
             if len(self.missed_letters) >= self.hangman.get_max_frame_num():
+                self.display_board()
                 print("Ви вичерпали усі спроби!")
                 print("Не вгадано букв:", len(self.secret_word)-len(self.correct_letters))
                 print("Слово:", self.secret_word)

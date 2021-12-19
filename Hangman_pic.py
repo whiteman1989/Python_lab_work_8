@@ -57,4 +57,4 @@ class Hangman_pic:
         self.curent_frame = 0
 
     def get_max_frame_num(self):
-        return len(self.pictures)
+        return len(self.pictures)-1
